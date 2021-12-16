@@ -10,8 +10,8 @@ public class Phoneme
       VOWEL,
       CONSONANT
    }
-   private String sound;
-   private letterType type;
+   public String sound;
+   public letterType type;
 
    public Phoneme(String sound, letterType type)
    {
