@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class PhoneticLibrary : MonoBehaviour
 {
-    public void Start()
+    public void Awake()
     {
         Library = this;
+        Library.InitLibs();
     }
 
     public static PhoneticLibrary Library = new PhoneticLibrary();
@@ -29,19 +30,43 @@ public class PhoneticLibrary : MonoBehaviour
     private static Phoneme theta = new Phoneme("th", Phoneme.letterType.CONSONANT);
     private static Phoneme omega = new Phoneme("oo", Phoneme.letterType.VOWEL);
     private static Phoneme schwa = new Phoneme("u", Phoneme.letterType.VOWEL);
-    
-    public List<Phoneme> apeLib = new List<Phoneme>()
-    {
-        m,g,p,b,i,omega,schwa,a 
-    };
-    public List<Phoneme> repLib = new List<Phoneme>()
-    {
-        k,s,sh,theta,h,e,a,i
-    };
-    public List<Phoneme> insLib = new List<Phoneme>()
-    {
-        z,s,sh,r,k,e,a,i,schwa
-    };
+
+    public List<Phoneme> apeLib = new List<Phoneme>();
+    public List<Phoneme> repLib = new List<Phoneme>();
+    public List<Phoneme> insLib = new List<Phoneme>();
     public List<Phoneme> aviLib = new List<Phoneme>();
+
+    private void InitLibs()
+    {
+        apeLib.Add(m);
+        apeLib.Add(g);
+        apeLib.Add(p);
+        apeLib.Add(b);
+        apeLib.Add(i);
+        apeLib.Add(omega);
+        apeLib.Add(schwa);
+        apeLib.Add(a);
+        
+        repLib.Add(k);
+        repLib.Add(s);
+        repLib.Add(sh);
+        repLib.Add(theta);
+        repLib.Add(h);
+        repLib.Add(e);
+        repLib.Add(a);
+        repLib.Add(i);
+        
+        insLib.Add(z);
+        insLib.Add(s);
+        insLib.Add(sh);
+        insLib.Add(r);
+        insLib.Add(k);
+        insLib.Add(e);
+        insLib.Add(a);
+        insLib.Add(i);
+        insLib.Add(schwa);
+        
+        //Add avian lib phonemes here
+    }
     
 }

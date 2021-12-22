@@ -6,7 +6,7 @@ using UnityEngine;
 public class Civilization
 {
     public String name;
-    public List<CivTraits> traits;
+    public List<CivTraits> traits = new List<CivTraits>();
     public Species species;
 
 

@@ -16,7 +16,9 @@ public class GenerateCiv : MonoBehaviour
     
     //UI Stuff
     public Text display;
-    private String limb, spectype, biome, trait1, trait2, trait3; 
+    private String limb, spectype, biome;
+
+    private List<string> sybStruct = new List<string>();
 
     private List<CivTraits> allTraits = new List<CivTraits>()
     {
@@ -27,7 +29,10 @@ public class GenerateCiv : MonoBehaviour
 
     public void Start()
     {
+        sybStruct.Add("CV");
+        sybStruct.Add("CVV");
         CreateLife();
+        
     }
 
     public void CreateLife()
@@ -41,14 +46,15 @@ public class GenerateCiv : MonoBehaviour
     private void GenerateSpecies()
     {
         species.InitSpecies();
+        langGen.Init_Syllables(species,sybStruct);
     }
 
     private void GenerateCivilization()
     {
-        langGen.Init_Syllables(species);
+        
         civ.species = species;
         civ.name = langGen.MakeWord();
-
+        
         for (int i = 0; i < 3; i++)
         {
             ChooseCivTraits();
@@ -64,6 +70,9 @@ public class GenerateCiv : MonoBehaviour
         {
             ChooseCivTraits();
         }
+        
+        civ.traits.Add(temp);
+        
         //Add checks for incompatible traits e.g. warlike + peaceful
     }
 
@@ -96,18 +105,16 @@ public class GenerateCiv : MonoBehaviour
             SpeciesTraits.AVIAN => "Avian-like",
             _ => spectype
         };
-
-        trait1 = civ.traits[0].ToString();
-        trait2 = civ.traits[1].ToString();
-        trait3 = civ.traits[2].ToString();
+        
         
 
     }
 
     private void DisplayInfo()
     {
-        display.text += "The civilization of " + civ.name;
-        display.text += "\n" + trait1;
+        display.text += "The civilization of " + civ.name + ".\n";
+        display.text += civ.name + " is a made up of a " + limb + " " + spectype + " species which live in " + biome + " areas.";
+        display.text += "\nThe " + civ.name + " are a " + civ.traits[0] + ", "+ civ.traits[1] + ", and " + civ.traits[2] + " civ";
 
     }
 }

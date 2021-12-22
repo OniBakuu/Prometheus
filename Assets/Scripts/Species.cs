@@ -13,7 +13,7 @@ public class Species
     public void InitSpecies()
     {
         int rand;
-        rand = Random.Range(0, 4);
+        rand = Random.Range(0, 3);
 
         switch (rand)
         {
@@ -21,13 +21,13 @@ public class Species
                 speciesTrait = SpeciesTraits.APE;
                 break;
             case 2:
-                speciesTrait = SpeciesTraits.AVIAN;
+                speciesTrait = SpeciesTraits.REPTILE;
                 break;
             case 3:
                 speciesTrait = SpeciesTraits.INSECT;
                 break;
             case 4:
-                speciesTrait = SpeciesTraits.REPTILE;
+                speciesTrait = SpeciesTraits.AVIAN;
                 break;
         }
 

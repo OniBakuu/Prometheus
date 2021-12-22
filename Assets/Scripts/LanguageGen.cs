@@ -8,23 +8,21 @@ using Random = UnityEngine.Random;
 public class LanguageGen : MonoBehaviour
 {
     //Lists for syllable structures and all possible syllables that can be created with given syllable structures
-    public List<String> allSybs = new List<string>();
-    public List<String> sybStructure = new List<string>();
-    
-    
-    
+    public List<String> allSybs = new List<String>();
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        //Init_Syllables();
-        
+
     }
 
     //Makes word based library
-    public String MakeWord()
+    public string MakeWord()
     {
         
-        int wordLength = Random.Range(1, 5);
+        int wordLength = Random.Range(1, 6);
         List<String> syllables = new List<String>();
         String word = "";
 
@@ -35,11 +33,13 @@ public class LanguageGen : MonoBehaviour
         }
         
 
+        Debug.Log(wordLength);
+        
         for (int i = 0; i < syllables.Count; i++)
         {
             word += syllables[i];
         }
-
+        
         return word;
 
     }
@@ -58,10 +58,10 @@ public class LanguageGen : MonoBehaviour
         return wordString;
     }
 
-    public void Init_Syllables(Species species)
+    public void Init_Syllables(Species species, List<string> structure)
     {
 
-        if (sybStructure.Contains("CV"))
+        if (structure.Contains("CV"))
         {
             for (int i = 0; i < species.phonemes.Count; i++)
             {
@@ -79,7 +79,7 @@ public class LanguageGen : MonoBehaviour
             }
         }//End of CV
 
-        if (sybStructure.Contains("CVV"))
+        if (structure.Contains("CVV"))
         {
             for (int i = 0; i < species.phonemes.Count; i++)
             {
