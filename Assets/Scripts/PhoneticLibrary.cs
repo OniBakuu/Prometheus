@@ -9,7 +9,6 @@ public class PhoneticLibrary : MonoBehaviour
     public void Awake()
     {
         Library = this;
-        Library.InitLibs();
     }
 
     public static PhoneticLibrary Library = new PhoneticLibrary();
@@ -30,13 +29,17 @@ public class PhoneticLibrary : MonoBehaviour
     private static Phoneme theta = new Phoneme("th", Phoneme.letterType.CONSONANT);
     private static Phoneme omega = new Phoneme("oo", Phoneme.letterType.VOWEL);
     private static Phoneme schwa = new Phoneme("u", Phoneme.letterType.VOWEL);
+    private static Phoneme w = new Phoneme("w", Phoneme.letterType.CONSONANT);
+    private static Phoneme t = new Phoneme("t", Phoneme.letterType.CONSONANT);
+    
+    
 
     public List<Phoneme> apeLib = new List<Phoneme>();
     public List<Phoneme> repLib = new List<Phoneme>();
     public List<Phoneme> insLib = new List<Phoneme>();
     public List<Phoneme> aviLib = new List<Phoneme>();
 
-    private void InitLibs()
+    public void InitLibs()
     {
         apeLib.Add(m);
         apeLib.Add(g);
@@ -66,7 +69,13 @@ public class PhoneticLibrary : MonoBehaviour
         insLib.Add(i);
         insLib.Add(schwa);
         
-        //Add avian lib phonemes here
+        aviLib.Add(w);
+        aviLib.Add(t);
+        aviLib.Add(r);
+        aviLib.Add(k);
+        aviLib.Add(a);
+        aviLib.Add(i);
+        aviLib.Add(omega);
     }
     
 }

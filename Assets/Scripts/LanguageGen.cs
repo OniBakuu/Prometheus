@@ -22,7 +22,7 @@ public class LanguageGen : MonoBehaviour
     public string MakeWord()
     {
         
-        int wordLength = Random.Range(1, 6);
+        int wordLength = Random.Range(1, 5);
         List<String> syllables = new List<String>();
         String word = "";
 
@@ -32,8 +32,6 @@ public class LanguageGen : MonoBehaviour
             syllables.Add(allSybs[num]);
         }
         
-
-        Debug.Log(wordLength);
         
         for (int i = 0; i < syllables.Count; i++)
         {
@@ -60,6 +58,7 @@ public class LanguageGen : MonoBehaviour
 
     public void Init_Syllables(Species species, List<string> structure)
     {
+        allSybs.Clear();
 
         if (structure.Contains("CV"))
         {

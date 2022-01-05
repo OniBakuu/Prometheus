@@ -4,14 +4,14 @@ using UnityEngine;
 
 public enum CivTraits
 {
-    ADVENTUROUS,
-    CAUTIOUS,
-    DELICATE,DEVOUT,
-    ENDURING,
-    GREEDY,
-    INDUSTRIUOS, INTELLIGENT,
-    PASSSIVE,PEACEFUL,
-    WARLIKE
+    Adventurous, Aggressive,
+    Cautious,
+    Delicate,Devout,
+    Enduring,
+    Greedy,
+    Industrious, Intelligent,
+    Passive,Peaceful,
+    Warlike
 }
 
 public enum SpeciesTraits

@@ -13,7 +13,7 @@ public class Species
     public void InitSpecies()
     {
         int rand;
-        rand = Random.Range(0, 3);
+        rand = Random.Range(1, 5);
 
         switch (rand)
         {
@@ -31,7 +31,7 @@ public class Species
                 break;
         }
 
-        rand = Random.Range(0, 2);
+        rand = Random.Range(1, 3);
         switch (rand)
         {
             case 1:
@@ -58,7 +58,7 @@ public class Species
                 break;
         }
 
-        rand = Random.Range(0, 6);
+        rand = Random.Range(1, 7);
         switch (rand)
         {
             case 1:
