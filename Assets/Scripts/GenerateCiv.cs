@@ -23,7 +23,7 @@ public class GenerateCiv : MonoBehaviour
     {
         CivTraits.Adventurous, CivTraits.Devout, CivTraits.Greedy, CivTraits.Warlike, CivTraits.Cautious,
         CivTraits.Delicate, CivTraits.Enduring,CivTraits.Passive, CivTraits.Peaceful, CivTraits.Industrious,
-        CivTraits.Industrious, CivTraits.Aggressive
+        CivTraits.Industrious, CivTraits.Aggressive, CivTraits.Intelligent
     };
 
     public void Start()
